@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Entity
 public class ArticleLike {
     @Id

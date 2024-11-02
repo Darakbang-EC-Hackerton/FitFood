@@ -33,7 +33,7 @@ public class Member extends BaseTimeEntity {
     private String picture;
 
 
-    @OneToMany(mappedBy = "Member", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
     List<DietArticle> articleList = new ArrayList<>();
 
     

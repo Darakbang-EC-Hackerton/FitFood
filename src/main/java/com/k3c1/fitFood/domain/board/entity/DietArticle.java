@@ -35,10 +35,9 @@ public class DietArticle extends BaseTimeEntity { // Updated to use the correct 
   
   
     @OneToMany(mappedBy = "dietArticle", cascade = CascadeType.REMOVE)
-
     private List<Comment> comments = new ArrayList<>();
 
-    @OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "dietArticle", cascade = CascadeType.REMOVE)
     private List<ArticleLike> likes = new ArrayList<>();
 
     @Builder
