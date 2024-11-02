@@ -21,14 +21,14 @@ public class DietArticle {
     private String title;
     @Column(name = "content", nullable = false)
     private String content;
-    @Column(name = "phoneNumber")
-    private String phoneNumber;
+
+    @OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
+
 
     @Builder
     public DietArticle(String title, String content, String phoneNumber) {
         this.title = title;
         this.content = content;
-        this.phoneNumber = phoneNumber;
     }
 
     public void uppdate()

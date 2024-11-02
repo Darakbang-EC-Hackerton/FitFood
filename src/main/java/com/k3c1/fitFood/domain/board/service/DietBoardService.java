@@ -5,6 +5,7 @@ import com.k3c1.fitFood.domain.board.repository.DietArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -21,4 +22,7 @@ public class DietBoardService {
     }
 
 
+    public Collection<Object> findByContent(String content) {
+
+    }
 }
