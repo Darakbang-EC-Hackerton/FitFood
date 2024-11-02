@@ -14,13 +14,13 @@ spring:
   datasource:
     driver-class-name: org.h2.Driver
     generate-unique-name: false
-    url: 'jdbc:h2:mem:board'
+    url: 'jdbc:h2:mem:fitfood'
 
-  sql:
-    init:
-      mode: always
-      schema-locations: classpath:schema.sql
-      data-locations: classpath:data.sql
+  #sql:
+    #init:
+      #mode: always
+      #schema-locations: classpath:schema.sql
+      #data-locations: classpath:data.sql
   jpa:
     database-platform:  org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
