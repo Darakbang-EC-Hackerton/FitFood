@@ -2,6 +2,7 @@ package com.k3c1.fitFood.domain.member.entity;
 
 import com.k3c1.fitFood.domain.BaseTimeEntity;
 import com.k3c1.fitFood.domain.board.entity.Comment;
+import com.k3c1.fitFood.domain.board.entity.DietArticle;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -30,6 +31,12 @@ public class Member extends BaseTimeEntity {
 
     @Column
     private String picture;
+
+
+    @OneToMany(mappedBy = "Member", cascade = CascadeType.REMOVE)
+    List<DietArticle> articleList = new ArrayList<>();
+
+    
 
 
     @Column

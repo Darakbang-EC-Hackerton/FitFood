@@ -9,10 +9,13 @@ import com.k3c1.fitFood.domain.board.repository.DietArticleRepository;
 import com.k3c1.fitFood.domain.member.entity.Member;
 import com.k3c1.fitFood.domain.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @RequiredArgsConstructor
+
+@Service
 public class CommentService {
     private final DietArticleRepository dietArticleRepository;
     private final CommentRepository commentRepository;

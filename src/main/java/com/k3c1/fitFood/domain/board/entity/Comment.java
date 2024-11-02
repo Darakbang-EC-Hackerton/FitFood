@@ -19,11 +19,27 @@ import lombok.NoArgsConstructor;
     private String comment;
 
     @ManyToOne
+
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
     @JoinColumn(name = "diet_article_id", nullable = false)
     private DietArticle dietArticle; // This should match the mappedBy in DietArticle
     @ManyToOne
     @JoinColumn(name = "member_id", nullable = false)
     private Member member; // This should match the mappedBy in DietArticle
+
 
     @Builder
     public Comment(String comment, DietArticle dietArticle, Member member) {
