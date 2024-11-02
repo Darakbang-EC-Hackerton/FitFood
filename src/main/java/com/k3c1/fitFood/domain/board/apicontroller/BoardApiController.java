@@ -36,7 +36,7 @@ public class BoardApiController {
 
     // 특정 게시글 조회 (ID 기준)
     @GetMapping("/{id}")
-    public ResponseEntity<?> article(@PathVariable Long id, Model model) {
+    public ResponseEntity<?> article(@PathVariable Long id) {
         ArticleViewResponse responseDto = boardService.findById(id);
         return (responseDto != null)
                 ? ResponseEntity.ok(responseDto)
