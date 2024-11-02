@@ -1,4 +1,4 @@
-package com.wondrous.board.domain;
+package com.k3c1.fitFood.domain;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

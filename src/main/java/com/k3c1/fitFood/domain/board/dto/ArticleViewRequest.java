@@ -1,20 +1,18 @@
 package com.k3c1.fitFood.domain.board.dto;
 
 import com.k3c1.fitFood.domain.board.entity.DietArticle;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.zaxxer.hikari.util.UtilityElf;
+import lombok.*;
 
 @Getter
+@Setter
+@RequiredArgsConstructor
 @NoArgsConstructor
 public class ArticleViewRequest {
 
-    private Long id;
     private String title;
     private String content;
+    private String author;
 
-    public ArticleViewRequest(DietArticle article) {
-        this.id = article.getId();
-        this.title = article.getTitle();
-        this.content = article.getContent();
-    }
+
 }

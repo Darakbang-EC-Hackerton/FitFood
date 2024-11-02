@@ -1,5 +1,6 @@
 package com.k3c1.fitFood.domain.board.entity;
 
+import com.k3c1.fitFood.domain.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -7,29 +8,33 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+// Updated import statement
+
 
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-
-public class DietArticle {
+public class DietArticle extends BaseTimeEntity { // Updated to use the correct import
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "title", nullable = false)
     private String title;
+
     @Column(name = "content", nullable = false)
     private String content;
 
-    @OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
-
+    //@OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
 
     @Builder
-    public DietArticle(String title, String content, String phoneNumber) {
+    public DietArticle(String title, String content) {
         this.title = title;
         this.content = content;
     }
 
-    public void uppdate()
+    public void update(String title, String content) {;
+        this.title = title;
+        this.content = content;
+    }
 }
