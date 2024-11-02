@@ -1,6 +1,7 @@
 package com.k3c1.fitFood.domain.board.entity;
 
 import com.k3c1.fitFood.domain.BaseTimeEntity;
+import com.k3c1.fitFood.domain.member.entity.Member;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -25,8 +26,15 @@ public class DietArticle extends BaseTimeEntity { // Updated to use the correct 
     @Column(name = "content", nullable = false)
     private String content;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id", nullable = false)
+    private Member member;
+
     @OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
     private List<Comment> comments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
+    private List<ArticleLike> likes = new ArrayList<>();
 
     @Builder
     public DietArticle(String title, String content) {

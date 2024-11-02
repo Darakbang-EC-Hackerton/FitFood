@@ -3,7 +3,6 @@ package com.k3c1.fitFood.domain.board.apicontroller;
 import com.k3c1.fitFood.domain.board.dto.CommentViewRequest;
 import com.k3c1.fitFood.domain.board.dto.CommentViewResponse;
 import com.k3c1.fitFood.domain.board.service.CommentService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

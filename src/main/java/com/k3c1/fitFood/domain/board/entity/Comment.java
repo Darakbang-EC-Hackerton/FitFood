@@ -20,7 +20,7 @@ public class Comment extends BaseTimeEntity {
     private DietArticle dietArticle;
 
     @ManyToOne
-    @JoinColumn(name = "member")
+    @JoinColumn(name = "member_id")
     private Member member;
 
     @Builder
