@@ -18,7 +18,7 @@ public class CommentService {
     public final MemberRepository memberRepository;
 
     //댓글 등록
-    public CommentViewResponse createCOmment(CommentViewRequest commentViewRequest) {
+    public CommentViewResponse createComment(CommentViewRequest commentViewRequest) {
         DietArticle parentArticle = dietArticleRepository.findById(commentViewRequest.getDietArticleId()).orElse(null);
         Member parentMember = memberRepository.findById(commentViewRequest.getMemberId()).orElse(null);
         if(parentArticle == null || parentMember == null) {
