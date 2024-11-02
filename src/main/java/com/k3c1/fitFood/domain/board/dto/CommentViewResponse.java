@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 
 
 @AllArgsConstructor
-@RequiredArgsConstructor
 @NoArgsConstructor
 @Getter
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)

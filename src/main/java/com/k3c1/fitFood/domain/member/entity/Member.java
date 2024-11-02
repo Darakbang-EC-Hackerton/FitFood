@@ -39,7 +39,7 @@ public class Member extends BaseTimeEntity {
   
   
   
-  @OneToMany(mappedBy = "Member", cascade = CascadeType.REMOVE)
+  @OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
     List<Comment> commentList = new ArrayList<>();
 
 
