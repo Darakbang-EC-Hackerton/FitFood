@@ -32,22 +32,15 @@ public class SecurityConfig {
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                new AntPathRequestMatcher("/"),
-                                new AntPathRequestMatcher("/css"),
-                                new AntPathRequestMatcher("/js/**"),
-                                new AntPathRequestMatcher("/h2/console"),
-                                new AntPathRequestMatcher("/profile")
-                        ).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/**")).hasRole(Role.USER.name())
-                        .anyRequest().authenticated())
+                        .anyRequest().permitAll())
+                        //.requestMatchers(new AntPathRequestMatcher("/api/**")).hasRole(Role.USER)
                 //이후 유저 엔드 포인트 설정
                 .oauth2Login((oauth2) -> oauth2
                         .userInfoEndpoint(userInfoEndpointConfig ->
-                                userInfoEndpointConfig.userService(customOAuth2UserService)))
-                .logout((logout) -> logout
-                        .logoutSuccessUrl("/"));
+                                userInfoEndpointConfig.userService(customOAuth2UserService)));
 
         return http.build();
     }
 }
+
+

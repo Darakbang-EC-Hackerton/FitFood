@@ -32,11 +32,23 @@ public class Member extends BaseTimeEntity {
     @Column
     private String picture;
 
+
     @OneToMany(mappedBy = "Member", cascade = CascadeType.REMOVE)
     List<DietArticle> articleList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Member", cascade = CascadeType.REMOVE)
+    
+
+
+    @Column
+    private String role;
+
+    
+  
+  
+  
+  @OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
     List<Comment> commentList = new ArrayList<>();
+
 
     @Builder
     public Member(String name, String email, String picture) {
@@ -48,6 +60,20 @@ public class Member extends BaseTimeEntity {
     public Member update(String picture) {
         this.picture = picture;
         return this;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void update(String name, String email, String role) {
+        this.name = name;
+        this.email = email;
+        this.role = role;
     }
 
     //provider

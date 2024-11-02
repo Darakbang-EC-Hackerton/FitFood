@@ -30,7 +30,12 @@ public class DietArticle extends BaseTimeEntity { // Updated to use the correct 
     @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
-    @OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
+  
+  
+  
+  
+    @OneToMany(mappedBy = "dietArticle", cascade = CascadeType.REMOVE)
+
     private List<Comment> comments = new ArrayList<>();
 
     @OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
