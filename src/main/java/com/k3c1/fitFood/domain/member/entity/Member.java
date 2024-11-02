@@ -1,13 +1,20 @@
 package com.k3c1.fitFood.domain.member.entity;
 
+import com.k3c1.fitFood.domain.BaseTimeEntity;
+import com.k3c1.fitFood.domain.board.entity.Comment;
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 
 @Entity
-public class Member extends com.wondrous.board.domain.BaseTimeEntity {
+@Getter
+public class Member extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,6 +30,9 @@ public class Member extends com.wondrous.board.domain.BaseTimeEntity {
 
     @Column
     private String picture;
+
+    @OneToMany(mappedBy = "Member", cascade = CascadeType.REMOVE)
+    List<Comment> commentList = new ArrayList<>();
 
     @Builder
     public Member(String name, String email, String picture) {

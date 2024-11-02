@@ -7,8 +7,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-// Updated import statement
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -25,7 +25,8 @@ public class DietArticle extends BaseTimeEntity { // Updated to use the correct 
     @Column(name = "content", nullable = false)
     private String content;
 
-    //@OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "DietArticle", cascade = CascadeType.REMOVE)
+    private List<Comment> comments = new ArrayList<>();
 
     @Builder
     public DietArticle(String title, String content) {
